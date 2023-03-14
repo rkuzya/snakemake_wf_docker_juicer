@@ -6,10 +6,15 @@ call_juicer: Runs Juicer inside a Docker container on the raw fastq file to gene
 The rule specifies the following arguments to Juicer:
 
 -s: Specifies the path to the input fastq file.
+
 -g: Specifies the path to the genome file.
+
 -e: Specifies the restriction enzyme used in the experiment.
+
 -r: Specifies the path to the restriction enzyme cutting site file.
+
 -c: Specifies the path to the chromosome sizes file.
+
 -o: Specifies the output file name and location.
 
 The config.yaml file specifies the paths to the genome, restriction enzyme cutting sites, and chromosome sizes. You will need to modify the paths to match your system.
