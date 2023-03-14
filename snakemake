@@ -1,0 +1,16 @@
+# Snakemake workflow for processing HIC data using Juicer inside a Docker container
+
+# Define output file
+rule all:
+    input:
+        "final/hic/sample.hic"
+
+# Call Juicer to process HIC data
+rule call_juicer:
+    input:
+        "raw/hic/sample.fastq.gz"
+    output:
+        "final/hic/sample.hic"
+    shell:
+        "docker run -v $(pwd)/raw/hic:/data -v $(pwd)/final/hic:/output juicer/juicer:latest juice -s /data/sample.fastq.gz -g /path/to/genome/hg19.fa -e HindIII -r /path/to/restriction_sites/HindIII_sites.txt -c /path/to/chrom_sizes/hg19.chrom.sizes -o /output/sample.hic"
+        
