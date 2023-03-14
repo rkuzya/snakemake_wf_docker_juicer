@@ -27,5 +27,3 @@ In summary, this workflow runs Juicer inside a Docker container with the specifi
 
 JUICER DOCKER CONTAINER TO BE USED:
 https://hub.docker.com/r/aidenlab/juicer
-
-# test
