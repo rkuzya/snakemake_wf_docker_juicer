@@ -1,11 +1,9 @@
-# snakemake_wf_docker_juicer
-Snakemake to analyze HIC data using Juicer inside a Docker container with the specified genome, restriction enzyme cutting sites, and chromosome sizes.
-
 This workflow contains one rule:
 
 all: Specifies the output file(s) that are required to consider the workflow run as successful. In this case, it is the final Hi-C matrix in the .hic format.
 
-call_juicer: Runs Juicer inside a Docker container on the raw fastq file to generate the final Hi-C matrix in the .hic format in the final/hic directory. The rule specifies the following arguments to Juicer:
+call_juicer: Runs Juicer inside a Docker container on the raw fastq file to generate the final Hi-C matrix in the .hic format in the final/hic directory.
+The rule specifies the following arguments to Juicer:
 
 -s: Specifies the path to the input fastq file.
 -g: Specifies the path to the genome file.
